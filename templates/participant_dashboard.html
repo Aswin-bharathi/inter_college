@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Dashboard | STRATA Participant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            padding: 25px 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .info {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #444;
+        }
+        .info strong {
+            color: #007bff;
+        }
+        .logout-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 18px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            float: right;
+        }
+        .logout-btn:hover {
+            background: #c0392b;
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px 10px;
+                padding: 20px;
+            }
+            .logout-btn {
+                float: none;
+                display: block;
+                text-align: center;
+                margin: 20px auto 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+        <h1>Welcome, {{ participant.name }}!</h1>
+        <div class="info">
+            <p><strong>College:</strong> {{ participant.college }}</p>
+            <p><strong>Email:</strong> {{ participant.email }}</p>
+            <p><strong>Phone:</strong> {{ participant.phone }}</p>
+            <p><strong>Registered Event:</strong> {{ participant.events }}</p>
+            <p><strong>Username:</strong> {{ participant.username }}</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | STRATA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            text-align: center;
+            word-wrap: break-word;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .logout-btn {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .logout-btn:hover {
+            background-color: #c0392b;
+        }
+        @media(max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead {
+                display: none;
+            }
+            tr {
+                margin-bottom: 15px;
+                background: #fdfdfd;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            }
+            td {
+                padding: 10px;
+                border: none;
+                text-align: left;
+                position: relative;
+            }
+            td:before {
+                content: attr(data-label);
+                font-weight: bold;
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    <h1>STRATA Participants List (Admin View)</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>College</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Events</th>
+            <th>Username</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for participant in participants %}
+        <tr>
+            <td data-label="ID">{{ participant.id }}</td>
+            <td data-label="Name">{{ participant.name }}</td>
+            <td data-label="College">{{ participant.college }}</td>
+            <td data-label="Email">{{ participant.email }}</td>
+            <td data-label="Phone">{{ participant.phone }}</td>
+            <td data-label="Events">{{ participant.events }}</td>
+            <td data-label="Username">{{ participant.username }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

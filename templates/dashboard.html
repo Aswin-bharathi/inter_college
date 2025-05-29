@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - STRATA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Participants Dashboard</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>College</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Events</th>
+        </tr>
+        {% for p in participants %}
+        <tr>
+            <td>{{ p.name }}</td>
+            <td>{{ p.college }}</td>
+            <td>{{ p.email }}</td>
+            <td>{{ p.phone }}</td>
+            <td>{{ p.events }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/logout"><button>Logout</button></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Registration Successful | STRATA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #e6f2ff;
+            margin: 0;
+            padding: 40px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .success-box {
+            background: white;
+            padding: 40px 50px;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            text-align: center;
+            color: #2c3e50;
+        }
+        .success-box h1 {
+            font-size: 2.4rem;
+            margin-bottom: 15px;
+            color: #28a745;
+        }
+        .success-box p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        .success-box a {
+            padding: 12px 25px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        .success-box a:hover {
+            background: #0056b3;
+        }
+        @media (max-width: 480px) {
+            .success-box {
+                padding: 30px 25px;
+            }
+            .success-box h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-box">
+        <h1>Registration Successful!</h1>
+        <p>Thank you for registering for the STRATA event.<br>Your credentials have been sent to your email.</p>
+        <a href="/login">Go to Login</a>
+    </div>
+</body>
+</html>

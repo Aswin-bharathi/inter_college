@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>STRATA Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            padding: 60px 20px 40px;
+            flex-grow: 1;
+        }
+        h1 {
+            font-size: 2.4rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        p.description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        .buttons {
+            margin-bottom: 40px;
+        }
+        button {
+            padding: 14px 30px;
+            margin: 10px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            min-width: 140px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        ul.features {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            padding-left: 0;
+            list-style: none;
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: left;
+        }
+        ul.features li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        ul.features li::before {
+            content: "✔️";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2rem;
+            color: #007bff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 10px;
+            background: #e9ecef;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            button {
+                width: 100%;
+                max-width: 280px;
+            }
+            ul.features {
+                text-align: center;
+                padding-left: 0;
+            }
+            ul.features li {
+                padding-left: 0;
+                margin-bottom: 10px;
+                display: inline-block;
+                margin-right: 10px;
+            }
+            ul.features li::before {
+                content: "";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Welcome to STRATA Event</h1>
+        <p class="description">
+            STRATA is the annual inter-college festival celebrating creativity, technology, and sportsmanship. Join hundreds of participants competing and collaborating in exciting events, workshops, and more!
+        </p>
+        <div class="buttons">
+            <a href="/register"><button>Register</button></a>
+            <a href="/login"><button>Login</button></a>
+        </div>
+        <ul class="features">
+            <li>🎯 Competitive Coding Challenges</li>
+            <li>🎨 Creative Art & Design Contests</li>
+            <li>🏆 Sports and Team Events</li>
+            <li>🎤 Workshops and Guest Talks</li>
+        </ul>
+    </div>
+    <footer>
+        Organized by STRATA Team | Contact: <a href="mailto:strata@college.edu">strata@college.edu</a>
+    </footer>
+</body>
+</html>
