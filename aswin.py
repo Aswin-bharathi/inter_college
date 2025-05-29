@@ -2,11 +2,14 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 import smtplib
+import os
 from email.mime.text import MIMEText
 
 app = Flask(__name__)
 app.secret_key = "strata-secret"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///participants.db'
+
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+
 db = SQLAlchemy(app)
 # ✅ Admin credentials
 ADMIN_USERNAME = "admin"
